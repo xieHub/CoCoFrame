@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<category id="SysUser">
+	<methord id="methord1">
+		<sql name="getEntityCount" param="id" exclude="page" value="count(1) from sys_user where id=?"/>
+		<sql name="checkEntityExits" param="userName,password" exclude="page" value="from sys_user where userName=? and password=?"/>
+		<sql name="findAll" exclude="page" value="from sys_user"/>
+		<sql name="findList" alias="u" param="id" exclude="page" value="from sys_user u where 1=1 and u.id=?"/>
+	</methord>
+		
+	<methord id="methord5">
+		<sql name="findList" alias="u" param="phone" exclude="page" value="from sys_user u where 1=1 and u.mobilePhone = ?"/>
+	</methord>
+	
+	<methord id="methord6">
+		<sql name="findList" param="userName" exclude="page" value="from sys_user  where userName=?"/>
+	</methord>
+	<methord id="methord7">
+		<sql name="findList" param="userName,password" exclude="page" value="from sys_user  where userName=? and password=?"/>
+	</methord>
+	<methord id="methord2">
+		<sql name="findList" param="status" exclude="page" value="from sys_user  where status=?"/>
+	</methord>
+	<methord id="methord3">
+		<sql name="findList" alias="u" param="roleId" exclude="page" value="from sys_user_role ur,sys_role r,sys_user u where ur.roleId = r.id and ur.userId = u.id  and ur.roleId=? and r.enabled=1"/>
+	</methord>
+	<methord id="methord4">
+		<sql name="findList" param="userName" exclude="page" value="from sys_user  where userName=?"/>
+	</methord>
+</category>
+
+</root>
